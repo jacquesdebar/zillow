@@ -39,7 +39,7 @@
  *
  * @returns Chart function so that you can render the chart when ready
  */
- year = "2015";
+ year = "1980";
  month = "03"
  sheet = "ma.csv"
 
@@ -165,7 +165,11 @@ function bubbleChart(year, month) {
 
 		var colorCircles;
 		if (!customColors) {
-			colorCircles = d3.scaleSequential(d3.interpolateRdYlGn);
+      // if (sheet == "ma.csv") {
+			  colorCircles = d3.scaleSequential(d3.interpolateRdYlGn);
+      // } else {
+        // colorCircles = d3.scaleSequential(d3.interpolateReds);
+      // }
 		}
 		else {
     colorCircles = d3.scaleOrdinal()
@@ -203,7 +207,13 @@ function bubbleChart(year, month) {
       return sqrtScale((551-num)/num);
 		})
 		.style("fill", function(d) {
-			return colorCircles((d[columnForColors]*2)*-1+1);
+      if (sheet == "ma.csv") {
+			  return colorCircles((d[columnForColors]*2));
+      } else {
+        return colorCircles(((d[columnForColors]*d[columnForColors])*10));
+      }
+			return colorCircles((d[columnForColors]*2));
+  		// return colorCircles((d[columnForColors]*2)*-1+1);
 		})
 		.on("mouseover", function(d) {
 			tooltip.html(d[columnForTitle] + "<br/>" + d[columnForColors] + "<br/>" + "Population: #" + d[columnForRadius] + " "+ unitName);

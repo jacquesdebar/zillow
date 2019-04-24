@@ -11,8 +11,14 @@
 </head>
 
 <body>
+  <a href="https://jacquesdebar.com/">
+  <div id="my-site">
+    <h3 id="asdf">Made by Jacques DeBar</h2>
+  </div></a>
 
-<h1 class="text-center my-5"><span id="selectedData">Mortgage Affordability</span> in <span id="selectedYear">1980</span></h1>
+<div id="title">
+  <h1 class="text-center my-5"><span id="selectedData">Mortgage Affordability</span> in <span id="selectedYear">1980</span></h1>
+</div>
 
 <form class="my-form">
     Enter a year between 1980 and 2018:
@@ -22,9 +28,6 @@
 </form>
 
 <div id="inputs2" class="mb-1">
-
-
-
   <div>
     <form name="myForm">
       Choose quarter: &nbsp;&nbsp;&nbsp;
@@ -41,13 +44,29 @@
       <input type="radio" name="num" value="ra">Rent Affordability
     </form>
   </div>
-
 </div>
 
 
+<div id ="chartbg">
+  <div class="chart-example" id="chart" class="mx-auto">
+    <svg id="this1"></svg>
+  </div>
+</div>
 
+<div class="mb-5">
+  <h2>About the data</h2>
+  <p>
+    This data was collected and processed by <a href="https://www.zillow.com/">Zillow</a>
+    and provides insight into how affordable major US cities are for their residents.
+    Both the rent affordability and mortgage affordability values shown above incorporate
+    median income data from the given city. Because of this, it is important to consider
+    that the values do <em>not</em> indicate how affordable a city may be to
+    <em>move to</em>, as someone moving from a one city would be less likely
+    to align with the income statistics of a different city. More information about
+    this data can be found <a href="https://www.zillow.com/research/data/">here</a>.
+  </p>
+</div>
 
-<div class="chart-example" id="chart" style="background-color:#ddd"><svg id="this1"></svg></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
 <script src="https://d3js.org/d3-color.v1.min.js"></script>
