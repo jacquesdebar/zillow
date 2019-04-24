@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Jacques DeBar">
+    <meta name="description" content="a data visualization surrounding housing affordability">
+    <title>Zillow Housing DataViz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.css">
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<h1 class="text-center my-5"><span id="selectedData">Mortgage Affordability</span> in <span id="selectedYear">1980</span></h1>
+
+<form class="my-form">
+    Enter a year between 1980 and 2018:
+    <input class="mb-2" id="searchTxt" type="text" name="year">
+    <input id="clickMe" type="button" value="Go" onclick="return changeYear();" />
+
+</form>
+
+<div id="inputs2" class="mb-1">
+
+
+
+  <div>
+    <form name="myForm">
+      Choose quarter: &nbsp;&nbsp;&nbsp;
+      <input type="radio" name="quarter" value="03" checked>Q1 &nbsp;&nbsp;
+      <input type="radio" name="quarter" value="06">Q2 &nbsp;&nbsp;
+      <input type="radio" name="quarter" value="09">Q3 &nbsp;&nbsp;
+      <input type="radio" name="quarter" value="12">Q4
+    </form>
+  </div>
+
+  <div class="float-right">
+    <form name="sheets">
+      <input type="radio" name="num" value="ma" checked>Mortgage Affordability
+      <input type="radio" name="num" value="ra">Rent Affordability
+    </form>
+  </div>
+
+</div>
+
+
+
+
+<div class="chart-example" id="chart" style="background-color:#ddd"><svg id="this1"></svg></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.6.0/d3.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script>
+
+var yellow = d3.interpolateYlGn(0), // "rgb(255, 255, 229)"
+    yellowGreen = d3.interpolateYlGn(0.5), // "rgb(120, 197, 120)"
+    green = d3.interpolateYlGn(1); // "rgb(0, 69, 41)"
+
+</script>
+<script src="bubble_chart.js"></script>
+
+
+</body>
+</html>

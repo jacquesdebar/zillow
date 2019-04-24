@@ -1,0 +1,25 @@
+
+
+body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+h1 {
+
+}
+
+#searchTxt {
+  width: 60px;
+}
+
+
+#inputs2 div {
+  display: inline-block;
+}
+
+#inputs2 input {
+  margin-right: 4px;
+}
